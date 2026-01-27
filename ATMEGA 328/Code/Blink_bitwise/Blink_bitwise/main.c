@@ -1,0 +1,23 @@
+/*
+ * Blink_bitwise.c
+ *
+ * Created: 27-01-2026 20:21:06
+ * Author : ashwi
+ */ 
+#define f_cpu 16000000UL
+#include <avr/io.h>
+#include<util/delay.h>
+
+
+int main(void)
+{
+    DDRB|=(1<<DDB5);
+    while (1) 
+    {
+		PORTB|=(1<<PB5);
+		_delay_ms(1000);
+		PORTB&=~(1<<PB5);
+		_delay_ms(1000);
+    }
+}
+
