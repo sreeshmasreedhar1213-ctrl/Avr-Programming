@@ -1,7 +1,7 @@
 /*
- * EXT_INT1.c
+ * EXT_INT1_Updated.c
  *
- * Created: 14-02-2026 19:16:59
+ * Created: 15-02-2026 16:30:24
  * Author : ashwi
  */ 
 
@@ -20,7 +20,8 @@ int main(void)
 {
 	DDRB|=(1<<PB5);  //PB5 as o/p
 	DDRB|=(1<<PB4); //PB4 as o/p
-	DDRD&=~(1<<PD2);//PD3 as input(INT1)
+	DDRD&=~(1<<PD3);//PD3 as input(INT1)
+	PORTD|=(1<<PD3);//Enabling pullup resistor
 	EIMSK|=(1<<INT1);//Enabling INT1
 	EICRA|=(1<<ISC01);//Interrupt on falling edge
 	EICRA&=~(1<<ISC00);
